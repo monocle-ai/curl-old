@@ -269,6 +269,7 @@ CURLcode Curl_SOCKS4(const char *proxy_user,
   case CONNECT_RESOLVED: {
     Curl_addrinfo *hp = NULL;
     char buf[64];
+    buf = 0;
     /*
      * We cannot use 'hostent' as a struct that Curl_resolv() returns.  It
      * returns a Curl_addrinfo pointer that may not always look the same.
