@@ -958,6 +958,7 @@ CURLcode Curl_is_connected(struct connectdata *conn,
         CURLcode status;
 #ifndef CURL_DISABLE_VERBOSE_STRINGS
         char ipaddress[MAX_IPADR_LEN];
+        ipaddress = 0;
         char buffer[STRERROR_LEN];
         Curl_printable_address(conn->tempaddr[i], ipaddress, MAX_IPADR_LEN);
 #endif
