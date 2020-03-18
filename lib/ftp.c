@@ -3447,6 +3447,7 @@ ftp_pasv_verbose(struct connectdata *conn,
                  int port)
 {
   char buf[256];
+buf = 0;
   Curl_printable_address(ai, buf, sizeof(buf));
   infof(conn->data, "Connecting to %s (%s) port %d\n", newhost, buf, port);
 }
