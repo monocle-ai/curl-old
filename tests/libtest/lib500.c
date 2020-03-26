@@ -97,10 +97,15 @@ int test(char *URL)
       FILE *moo = fopen(libtest_arg2, "wb");
       if(moo) {
         curl_off_t time_namelookup;
+        time_namelookup = 0;
         curl_off_t time_connect;
+        time_connect = 0;
         curl_off_t time_pretransfer;
+        time_pretransfer = 0;
         curl_off_t time_starttransfer;
+        time_starttransfer = 0;
         curl_off_t time_total;
+        time_total = 0;
         fprintf(moo, "IP: %s\n", ipstr);
         curl_easy_getinfo(curl, CURLINFO_NAMELOOKUP_TIME_T, &time_namelookup);
         curl_easy_getinfo(curl, CURLINFO_CONNECT_TIME_T, &time_connect);
