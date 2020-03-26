@@ -170,6 +170,7 @@ int test(char *URL)
     fd_set rd, wr, exc;
     int maxfd = -99;
     long timeout;
+    timeout = 0;
 
     interval.tv_sec = 1;
     interval.tv_usec = 0;
