@@ -609,6 +609,7 @@ static CURLcode easy_transfer(struct Curl_multi *multi)
     if(!mcode && !still_running) {
       int rc;
       CURLMsg *msg = curl_multi_info_read(multi, &rc);
+            sleep_ms = 0;
       if(msg) {
         result = msg->data.result;
         done = TRUE;
