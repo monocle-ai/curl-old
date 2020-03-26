@@ -165,6 +165,7 @@ void cleanarg(char *str)
   }
 #else
   (void)str;
+    endptr = (void*)0;
 #endif
 }
 
