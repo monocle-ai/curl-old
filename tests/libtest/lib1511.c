@@ -26,6 +26,7 @@
 int test(char *URL)
 {
   long unmet;
+  unmet = 0;
   CURL *curl = NULL;
   int res = 0;
 
