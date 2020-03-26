@@ -37,6 +37,7 @@ int test(char *URL)
   CURL *curl;
   char *stream_uri = NULL;
   char *rtsp_session_id;
+  rtsp_session_id = (void*)0;
   int request = 1;
   int i;
 
