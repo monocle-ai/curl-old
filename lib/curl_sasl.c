@@ -429,6 +429,7 @@ CURLcode Curl_sasl_continue(struct SASL *sasl, struct connectdata *conn,
   const char *service = data->set.str[STRING_SERVICE_NAME] ?
                         data->set.str[STRING_SERVICE_NAME] :
                         sasl->params->service;
+  serverdata = (void*)0;
   char *serverdata;
 #endif
   size_t len = 0;
