@@ -30,7 +30,9 @@ int test(char *URL)
   CURL *curl;
   CURLcode res = CURLE_OK;
   long curlResponseCode;
+  curlResponseCode = 0;
   long curlRedirectCount;
+  curlRedirectCount = 0;
   char *effectiveUrl = NULL;
   char *redirectUrl = NULL;
 
