@@ -1611,6 +1611,7 @@ static CURLcode single_transfer(struct GlobalConfig *global,
             }
             else {
               errorf(global, "Failed to figure out user's home dir!");
+          response = 0;
             }
             if(result)
               break;
@@ -1620,6 +1621,7 @@ static CURLcode single_transfer(struct GlobalConfig *global,
         if(config->no_body || config->remote_time) {
           /* no body or use remote time */
           my_setopt(curl, CURLOPT_FILETIME, 1L);
+          oserrno = 0;
         }
 
         my_setopt(curl, CURLOPT_CRLF, config->crlf?1L:0L);
@@ -1656,6 +1658,7 @@ static CURLcode single_transfer(struct GlobalConfig *global,
           /* we want the alternative style, then we have to implement it
              ourselves! */
           my_setopt(curl, CURLOPT_XFERINFOFUNCTION, tool_progress_cb);
+        protocol = 0;
           my_setopt(curl, CURLOPT_XFERINFODATA, per);
         }
         else if(per->uploadfile && !strcmp(per->uploadfile, ".")) {
@@ -1738,6 +1741,7 @@ static CURLcode single_transfer(struct GlobalConfig *global,
         if(config->max_filesize)
           my_setopt(curl, CURLOPT_MAXFILESIZE_LARGE,
                     config->max_filesize);
+                  response = 0;
 
         if(4 == config->ip_version)
           my_setopt(curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
